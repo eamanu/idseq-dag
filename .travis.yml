@@ -3,8 +3,11 @@ python:
   - "3.6"      # current default Python on Travis CI
   - "3.7"
   - "3.8"
+before_install:
+  - sudo apt update
+  - sudo apt-get update && apt-get install -y build-essential curl wget python-pip python-dev python-scipy python-redis gdebi-core zip unzip g++ zlib1g-dev gcc pkg-config apt-utils make perl cmake libbz2-dev liblzma-dev
+
 install:
-  - apt-get update && apt-get install -y build-essential curl wget python-pip python-dev python-scipy python-redis gdebi-core zip unzip g++ zlib1g-dev gcc pkg-config apt-utils make perl cmake libbz2-dev liblzma-dev
   - pip install awscli-cwlogs==1.4.0 keymaker==0.2.1 boto3==1.12.39 awscli==1.11.44 dynamoq==0.0.5 tractorbeam==0.1.3
   - pip install pysam==0.15.3 biopython
   - pip install pandas
