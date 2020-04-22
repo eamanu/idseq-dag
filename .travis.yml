@@ -6,7 +6,9 @@ python:
 before_install:
   - sudo apt update
   - sudo apt-get update && apt-get install -y build-essential curl wget python-pip python-dev python-scipy python-redis gdebi-core zip unzip g++ zlib1g-dev gcc pkg-config apt-utils make perl cmake libbz2-dev liblzma-dev
-
+addons:
+  apt:
+    update: true
 install:
   - pip install awscli-cwlogs==1.4.0 keymaker==0.2.1 boto3==1.12.39 awscli==1.11.44 dynamoq==0.0.5 tractorbeam==0.1.3
   - pip install pysam==0.15.3 biopython
